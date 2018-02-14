@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 10.0+e\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-11-21 23:19+0000\n"
-"PO-Revision-Date: 2017-11-21 23:19+0000\n"
+"POT-Creation-Date: 2018-02-14 21:55+0000\n"
+"PO-Revision-Date: 2018-02-14 21:55+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -21,16 +21,52 @@ msgid "Partner"
 msgstr ""
 
 #. module: base_phone_validation
-#: code:addons/base_phone_validation/models/res_partner.py:35
-#: code:addons/base_phone_validation/models/res_partner.py:48
+#: model:ir.ui.view,arch_db:base_phone_validation.view_sale_config_settings
+msgid "Phone Number"
+msgstr ""
+
+#. module: base_phone_validation
+#: model:ir.model.fields,field_description:base_phone_validation.field_sale_config_settings_phone_number_policy
+msgid "Phone number policy"
+msgstr ""
+
+#. module: base_phone_validation
+#: code:addons/base_phone_validation/models/res_partner.py:45
+#: code:addons/base_phone_validation/models/res_partner.py:59
 #, python-format
 msgid "Please double check it."
 msgstr ""
 
 #. module: base_phone_validation
-#: code:addons/base_phone_validation/models/res_partner.py:32
-#: code:addons/base_phone_validation/models/res_partner.py:45
+#: selection:sale.config.settings,phone_number_policy:0
+msgid "Soft"
+msgstr ""
+
+#. module: base_phone_validation
+#: model:ir.model.fields,help:base_phone_validation.field_sale_config_settings_phone_number_policy
+msgid "Soft only warn the user / Strict raise an error"
+msgstr ""
+
+#. module: base_phone_validation
+#: selection:sale.config.settings,phone_number_policy:0
+msgid "Strict"
+msgstr ""
+
+#. module: base_phone_validation
+#: code:addons/base_phone_validation/models/res_partner.py:42
+#: code:addons/base_phone_validation/models/res_partner.py:56
 #, python-format
 msgid "The number ({}) \"{}\" seems not valid for {}."
+msgstr ""
+
+#. module: base_phone_validation
+#: code:addons/base_phone_validation/models/res_partner.py:26
+#, python-format
+msgid "Warning"
+msgstr ""
+
+#. module: base_phone_validation
+#: model:ir.model,name:base_phone_validation.model_sale_config_settings
+msgid "sale.config.settings"
 msgstr ""
 

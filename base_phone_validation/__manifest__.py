@@ -12,7 +12,10 @@
     'category': 'Sale',
     'summary': 'Force the phone numbers to be valid.',
     'external_dependencies': {'python': ['phonenumbers']},
-    'depends': ['base_phone'],
-    'data': [],
+    'depends': ['base_phone', 'crm'],
+    'data': [
+        'data/ir_config_parameter.xml',
+        'views/res_config_views.xml',
+    ],
     'installable': True,
 }

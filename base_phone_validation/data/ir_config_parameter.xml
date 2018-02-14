@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+  <data>
+    <record id="phone_number_policy" model="ir.config_parameter">
+          <field name="key">base_phone_validation.policy</field>
+          <field name="value">strict</field>
+    </record>
+  </data>
+</odoo>

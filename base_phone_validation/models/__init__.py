@@ -3,4 +3,7 @@
 # © 2017 Savoir-faire Linux
 # License LGPL-3.0 or later (http://www.gnu.org/licenses/lgpl).
 
-from . import res_partner
+from . import (
+    res_partner,
+    res_config,
+)

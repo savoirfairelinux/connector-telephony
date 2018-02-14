@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+        <record id="view_sale_config_settings" model="ir.ui.view">
+            <field name="name">crm settings</field>
+            <field name="model">sale.config.settings</field>
+            <field name="inherit_id" ref="crm.view_sale_config_settings"/>
+            <field name="arch" type="xml">
+                <xpath expr="//group[@name='config_alias']" position="after">
+                    <group string="Phone Number" name="phone_settings">
+                        <field name="phone_number_policy" class="oe_inline"/>
+                    </group>
+                </xpath>
+            </field>
+        </record>
+</odoo>
