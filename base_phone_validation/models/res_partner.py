@@ -35,7 +35,17 @@ class ResPartner(models.Model):
         :raise ValidationError: if the given number is not validated.
         """
         if self.country_id:
-            number = phonenumbers.parse(phonenumber, self.country_id.code)
+            try:
+                number = phonenumbers.parse(phonenumber, self.country_id.code)
+            except Exception:
+                error_msg = u'\n'.join([
+                    _(u'The number ({}) "{}" seems not valid.').format(
+                        fieldname, phonenumber
+                    ),
+                    _(u'Please double check it.')
+                ])
+                raise ValidationError(error_msg)
+
             if not phonenumbers.is_valid_number_for_region(
                     number, self.country_id.code):
                 error_msg = u'\n'.join([
@@ -48,8 +58,17 @@ class ResPartner(models.Model):
 
         elif self.env.user.company_id.country_id:
             local_country = self.env.user.company_id.country_id
-            number = phonenumbers.parse(
-                phonenumber, local_country.code)
+            try:
+                number = phonenumbers.parse(
+                    phonenumber, local_country.code)
+            except Exception:
+                error_msg = u'\n'.join([
+                    _(u'The number ({}) "{}" seems not valid.').format(
+                        fieldname, phonenumber
+                    ),
+                    _(u'Please double check it.')
+                ])
+                raise ValidationError(error_msg)
             if not phonenumbers.is_valid_number_for_region(
                     number, local_country.code):
                 error_msg = u'\n'.join([
